@@ -12,17 +12,23 @@ form.addEventListener('submit', function(event){
 
 function handleForm(){
     let numberOfObjects = parseInt(numberInput.value, 10);
-    const objectInputValue = objectInput.value;
-    let convertedObjectInputValue = checkInputValue(objectInputValue, numberOfObjects);
     let output = ``;
-    
-    if (numberOfObjects === 0) {
-        output += `<p>There are no ${convertedObjectInputValue}</p>`;
-    } else if (numberOfObjects === 1) {
-        output += `<p>There is 1 ${convertedObjectInputValue}</p>`;
+    if(isNaN(numberOfObjects)){
+        output += `<p class="error">Please enter a number for the objects</p>`;
     } else {
-        output += `<p>There are ${numberOfObjects} ${convertedObjectInputValue}</p>`;
+        const objectInputValue = objectInput.value;
+        let convertedObjectInputValue = checkInputValue(objectInputValue, numberOfObjects);
+        
+        if (numberOfObjects === 0) {
+            output += `<p>There are no ${convertedObjectInputValue}</p>`;
+        } else if (numberOfObjects === 1) {
+            output += `<p>There is 1 ${convertedObjectInputValue}</p>`;
+        } else {
+            output += `<p>There are ${numberOfObjects} ${convertedObjectInputValue}</p>`;
+        }
+
     }
+    
     outputDiv.innerHTML = output;
 }
 

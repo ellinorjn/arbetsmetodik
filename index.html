@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
     <title>Arbetsmetodik</title>
 </head>
 <body>
-    <form id="form">
-        <label for="object">Write your object here:</label>
-        <input type="text" id="object">
-        <label for="number">Write the number of objects:</label>
-        <input type="text" id="number">
-        <button type="submit" id="submitButton">Submit</button>
-    </form>
-    <div id="output"></div>
+    <div class="wrapper">
+        <div class="form-wrapper">
+            <form id="form">
+                <label for="object">Write your object here:</label>
+                <input type="text" id="object" autocomplete="off">
+                <label for="number">Write the number of objects:</label>
+                <input type="text" id="number" autocomplete="off">
+                <button type="submit" id="submitButton">Submit</button>
+            </form>
+        </div>
+        <div id="output"></div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
